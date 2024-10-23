@@ -37,7 +37,7 @@ COPY --from=build /community-server/templates ./templates
 EXPOSE 3000
 
 # Set command run by the container
-ENTRYPOINT [ "node", "bin/server.js" ]
+ENTRYPOINT [ "node", "bin/server.js", "-b", "https://solid-server.euc.nodion.app" ]
 
 # By default run in filemode (overriden if passing alternative arguments or env vars)
 ENV CSS_CONFIG=config/file.json
